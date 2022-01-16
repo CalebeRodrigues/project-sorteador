@@ -1,10 +1,9 @@
-import './style.css';
+import { Container, Text } from './style';
 
 export const Navbar = () => {
-
   return (
-    <div>
-      Oi eu sou a navbar
-    </div>
-  )
-}
+    <Container>
+      <Text>Sorteador</Text>
+    </Container>
+  );
+};

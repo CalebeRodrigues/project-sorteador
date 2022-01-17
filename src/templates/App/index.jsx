@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
-import { InputNumber } from '../../components/InputNumber';
 import { Navbar } from '../../components/Navbar';
-import { TextArea } from '../../components/TextArea';
+import { NumbersDraw } from '../NumbersDraw';
+import { WordDraw } from '../WordDraw';
 
 function App() {
   const [sorteioType, setSorteioType] = useState('numeros');
+
   const radioRef = useRef();
 
   useEffect(() => {
@@ -32,18 +33,7 @@ function App() {
           <input id="nomes" type="radio" name="type-sorteio" /> <label htmlFor="nomes">Nomes</label>
         </form>
 
-        {sorteioType == 'nomes' ? (
-          <TextArea />
-        ) : (
-          <div style={{ marginBottom: '15px' }}>
-            <p style={{ marginTop: '10px' }}>
-              Sortear <InputNumber /> número(s) entre:
-            </p>
-            <InputNumber />
-            e
-            <InputNumber />
-          </div>
-        )}
+        {sorteioType == 'nomes' ? <WordDraw /> : <NumbersDraw />}
 
         <Button>Sortear {sorteioType}</Button>
       </Container>

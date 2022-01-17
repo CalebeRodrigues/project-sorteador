@@ -1,4 +1,4 @@
-export const InputNumber = () => {
+export const InputNumber = ({ ...props }) => {
   return (
     <input
       type="number"
@@ -13,6 +13,7 @@ export const InputNumber = () => {
         border: '1px solid gray',
         backgroundColor: 'transparent',
       }}
+      {...props}
     />
   );
 };

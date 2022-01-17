@@ -34,8 +34,6 @@ function App() {
         </form>
 
         {sorteioType == 'nomes' ? <WordDraw /> : <NumbersDraw />}
-
-        <Button>Sortear {sorteioType}</Button>
       </Container>
     </div>
   );

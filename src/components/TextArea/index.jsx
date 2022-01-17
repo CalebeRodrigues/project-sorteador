@@ -1,4 +1,4 @@
-export const TextArea = () => {
+export const TextArea = ({ ...props }) => {
   return (
     <textarea
       style={{
@@ -10,6 +10,7 @@ export const TextArea = () => {
         scrollMarginBottom: true,
         resize: 'none',
       }}
+      {...props}
     ></textarea>
   );
 };

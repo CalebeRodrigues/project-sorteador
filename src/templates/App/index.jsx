@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
+import { InputNumber } from '../../components/InputNumber';
 import { Navbar } from '../../components/Navbar';
-import './App.css';
+import { TextArea } from '../../components/TextArea';
 
 function App() {
   const [sorteioType, setSorteioType] = useState('numeros');
@@ -32,38 +33,15 @@ function App() {
         </form>
 
         {sorteioType == 'nomes' ? (
-          <textarea
-            style={{
-              height: '350px',
-              width: '100%',
-              marginBottom: '5px',
-            }}
-          ></textarea>
+          <TextArea />
         ) : (
           <div style={{ marginBottom: '15px' }}>
-            <p style={{ marginTop: '10px' }}>Sortear número entre:</p>
-            <input
-              type="number"
-              min="1"
-              max="50"
-              style={{
-                height: '50px',
-                marginTop: '20px',
-                marginLeft: '20px',
-                marginRight: '20px',
-              }}
-            />
+            <p style={{ marginTop: '10px' }}>
+              Sortear <InputNumber /> número(s) entre:
+            </p>
+            <InputNumber />
             e
-            <input
-              type="number"
-              min="1"
-              max="50"
-              style={{
-                height: '50px',
-                marginTop: '20px',
-                marginLeft: '20px',
-              }}
-            />
+            <InputNumber />
           </div>
         )}
 

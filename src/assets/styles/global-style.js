@@ -18,7 +18,7 @@ export default createGlobalStyle`
 
   body {
     background: #f5f5f5;
-    font-size: 16px;
+    font-size: 24px;
     font-family: sans-serif;
   }
 `;

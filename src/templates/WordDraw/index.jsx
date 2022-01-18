@@ -1,12 +1,16 @@
+import P from 'prop-types';
+
 import { useState } from 'react';
 import { Button } from '../../components/Button';
 import { InputNumber } from '../../components/InputNumber';
 import { TextArea } from '../../components/TextArea';
 import { randomWord } from '../../utils/raffle';
 
-export const WordDraw = () => {
+export const WordDraw = ({ objResult }) => {
   const [words, setWords] = useState('');
   const [qtd, setQtd] = useState(1);
+
+  const { setResult, setValue } = objResult;
 
   const componentsProps = {
     inputQtd: {
@@ -23,7 +27,8 @@ export const WordDraw = () => {
 
     button: {
       onClick: () => {
-        alert(randomWord(words.split('\n'), qtd).join(' - '));
+        setValue(randomWord(words.split('\n'), qtd));
+        setResult(true);
       },
     },
   };
@@ -37,4 +42,11 @@ export const WordDraw = () => {
       <Button {...componentsProps.button}>Sortear palavras</Button>
     </>
   );
+};
+
+WordDraw.propTypes = {
+  objResult: P.shape({
+    setResult: P.func.isRequired,
+    setValue: P.func.isRequired,
+  }).isRequired,
 };

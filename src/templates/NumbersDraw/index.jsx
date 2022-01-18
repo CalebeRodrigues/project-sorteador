@@ -1,12 +1,16 @@
+import P from 'prop-types';
+
 import { useState } from 'react';
 import { Button } from '../../components/Button';
 import { InputNumber } from '../../components/InputNumber';
 import { randomNumber } from '../../utils/raffle';
 
-export const NumbersDraw = () => {
+export const NumbersDraw = ({ objResult }) => {
   const [qtd, setQtd] = useState(1);
   const [min, setMin] = useState(1);
   const [max, setMax] = useState(1000);
+
+  const { setResult, setValue } = objResult;
 
   const componentsProps = {
     inputQtd: {
@@ -32,7 +36,8 @@ export const NumbersDraw = () => {
 
     button: {
       onClick: () => {
-        alert(randomNumber(min, max, qtd).join(' - '));
+        setValue(randomNumber(min, max, qtd));
+        setResult(true);
       },
     },
   };
@@ -51,4 +56,11 @@ export const NumbersDraw = () => {
       <Button {...componentsProps.button}>Sortear números</Button>
     </>
   );
+};
+
+NumbersDraw.propTypes = {
+  objResult: P.shape({
+    setResult: P.func.isRequired,
+    setValue: P.func.isRequired,
+  }).isRequired,
 };

@@ -1,6 +1,6 @@
 import P from 'prop-types';
 
-import { Button as Btn } from './style';
+import { ButtonStyle as Btn } from './style';
 
 export const Button = ({ children, ...props }) => {
   return <Btn {...props}>{children}</Btn>;

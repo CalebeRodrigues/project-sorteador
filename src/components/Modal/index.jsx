@@ -2,17 +2,19 @@ import P from 'prop-types';
 
 import { BtnExitModal, DivModal, DivModalChildren } from './style';
 
-export const Modal = ({ id }) => {
+export const Modal = ({ id, show, setShow, children }) => {
+  const handleClick = () => {
+    setShow((bool) => !bool);
+  };
+
   return (
     <>
-      <DivModal id={id}>
+      <DivModal id={id} show={show}>
         <DivModalChildren>
-          <BtnExitModal href="#fechar" title="Fechar" className="fechar">
+          <BtnExitModal title="Fechar" onClick={handleClick}>
             x
           </BtnExitModal>
-          <h2>Janela Modal</h2>
-          <p>Esta é uma simples janela de modal.</p>
-          <p>Você pode fazer qualquer coisa aqui, página de Login, pop-ups, ou formulários</p>
+          <div>{children}</div>
         </DivModalChildren>
       </DivModal>
     </>
@@ -20,5 +22,8 @@ export const Modal = ({ id }) => {
 };
 
 Modal.propTypes = {
-  id: P.number.isRequired,
+  id: P.string,
+  children: P.node,
+  show: P.bool,
+  setShow: P.func,
 };

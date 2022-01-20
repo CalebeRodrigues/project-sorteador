@@ -6,19 +6,13 @@ export const DivModal = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  font-family: Arial, Helvetica, sans-serif;
   background: rgba(0, 0, 0, 0.8);
   z-index: 99999;
-  opacity: 0;
+  opacity: ${(prop) => (prop.show ? 1 : 0)};
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
-  pointer-events: none;
-
-  :target {
-    opacity: 1;
-    pointer-events: auto;
-  }
+  pointer-events: ${(prop) => (prop.show ? 'auto' : 'none')};
 `;
 
 export const BtnExitModal = styled.a`
@@ -39,14 +33,34 @@ export const BtnExitModal = styled.a`
 
   :hover {
     background: #ec0000;
+    cursor: pointer;
     transform: scale(1.1);
   }
 `;
 
 export const DivModalChildren = styled.div`
-  width: 400px;
+  word-wrap: break-word;
+  width: 600px;
   position: relative;
   margin: 10% auto;
   padding: 15px 20px;
   background: #fff;
+
+  @media screen and (max-width: 427px) {
+    margin: 3% auto;
+    width: 350px;
+    padding: 10px 15px;
+  }
+
+  @media screen and (max-width: 376px) {
+    margin: 5% auto;
+    width: 300px;
+    padding: 4px 8px;
+  }
+
+  @media screen and (max-width: 320px) {
+    margin: 5% auto;
+    width: 280px;
+    padding: 4px 2px;
+  }
 `;

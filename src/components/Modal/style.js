@@ -47,19 +47,16 @@ export const DivModalChildren = styled.div`
   background: #fff;
 
   @media screen and (max-width: 427px) {
-    margin: 3% auto;
     width: 350px;
     padding: 10px 15px;
   }
 
   @media screen and (max-width: 376px) {
-    margin: 5% auto;
     width: 300px;
     padding: 4px 8px;
   }
 
-  @media screen and (max-width: 320px) {
-    margin: 5% auto;
+  @media screen and (max-width: 321px) {
     width: 280px;
     padding: 4px 2px;
   }

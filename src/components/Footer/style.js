@@ -32,6 +32,16 @@ export const FooterImage = styled.img`
     padding: 1px;
     content: url(${(props) => props.img});
   }
+
+  @media screen and (max-width: 768px) {
+    content: url(${(props) => props.img});
+    height: 25px;
+    width: 25px;
+
+    :hover {
+      content: url(${(props) => props.src});
+    }
+  }
 `;
 
 export const FooterLink = styled.a`
@@ -44,5 +54,14 @@ export const FooterLink = styled.a`
 
   :hover {
     color: white;
+  }
+
+  @media screen and (max-width: 769px) {
+    font-size: 16px;
+    color: white;
+
+    :hover {
+      color: gray;
+    }
   }
 `;

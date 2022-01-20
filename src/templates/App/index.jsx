@@ -5,6 +5,7 @@ import { NumbersDraw } from '../NumbersDraw';
 import { CardResultArea, CardResultAreaItem } from '../../components/CardResult';
 import { WordDraw } from '../WordDraw';
 import { Footer } from '../../components/Footer';
+import { Modal } from '../../components/Modal';
 
 function App() {
   const [sorteioType, setSorteioType] = useState('numeros');
@@ -38,6 +39,8 @@ function App() {
   return (
     <>
       <Navbar />
+
+      <Modal />
 
       <Container style={{ minHeight: '80vh', height: 'auto' }}>
         <form onClick={handleClick}>

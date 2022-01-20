@@ -25,5 +25,12 @@ export const CardResultAreaItem = styled.div`
   background-color: transparent;
   border: 1px solid gray;
   text-align: center;
+  cursor: pointer;
   border-radius: 10px;
+  transition: 0.3s;
+
+  :hover {
+    background-color: #d6d6d6ab;
+    border: 1px solid black;
+  }
 `;

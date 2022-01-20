@@ -4,6 +4,7 @@ import { Navbar } from '../../components/Navbar';
 import { NumbersDraw } from '../NumbersDraw';
 import { CardResultArea, CardResultAreaItem } from '../../components/CardResult';
 import { WordDraw } from '../WordDraw';
+import { Footer } from '../../components/Footer';
 
 function App() {
   const [sorteioType, setSorteioType] = useState('numeros');
@@ -38,7 +39,7 @@ function App() {
     <>
       <Navbar />
 
-      <Container>
+      <Container style={{ height: '100vh', border: '1px solid red', marginBottom: '-120px' }}>
         <form onClick={handleClick}>
           <input ref={radioRef} id="num" type="radio" name="type-sorteio" /> <label htmlFor="num">Numeros</label>
           <span style={{ marginLeft: '10px' }}> </span>
@@ -63,6 +64,8 @@ function App() {
           )}
         </div>
       </Container>
+
+      <Footer />
     </>
   );
 }

@@ -1,18 +1,15 @@
-import styled from 'styled-components';
 import { Container } from '../Container';
+import { FooterBar, FooterContainer, FooterLink } from './style';
 
 export const Footer = () => {
   return (
-    <div style={{ border: '1px solid green', marginTop: '20px', height: '120px' }}>
-      <Container style={{ border: '1px solid purple' }}>
-        <FooterBar>Footer</FooterBar>
+    <FooterContainer>
+      <Container style={{ backgroundColor: 'transparent' }}>
+        <FooterBar>
+          Site desenvolvido por{' '}
+          <FooterLink href="https://github.com/CalebeRodrigues">@Calebe Rodrigues, 2022</FooterLink>{' '}
+        </FooterBar>
       </Container>
-    </div>
+    </FooterContainer>
   );
 };
-
-const FooterBar = styled.div`
-  padding: 10px;
-  width: 100%;
-  text-align: center;
-`;

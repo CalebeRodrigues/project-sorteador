@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
+import instagram from '../../assets/img/instagram.png';
+
 export const FooterContainer = styled.div`
   background-color: #251f47;
-  border: 1px solid green;
-  margin-top: 20px;
-  height: 120px;
+  min-height: 120px;
 `;
 
 export const FooterBar = styled.div`
@@ -17,13 +17,32 @@ export const FooterBar = styled.div`
   text-align: center;
 `;
 
+export const FooterItem = styled.div`
+  padding: 2px;
+  margin: 5px;
+`;
+
+export const FooterImage = styled.img`
+  height: 32px;
+  width: 32px;
+  margin: 0px 10px;
+  transition: 0.2s;
+
+  :hover {
+    padding: 1px;
+    content: url(${(props) => props.img});
+  }
+`;
+
 export const FooterLink = styled.a`
   text-decoration: none;
-  color: white;
+  color: black;
+
+  font-size: 18px;
 
   transition: 0.2s;
 
   :hover {
-    color: #8a8a8a;
+    color: white;
   }
 `;

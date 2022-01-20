@@ -39,7 +39,7 @@ function App() {
     <>
       <Navbar />
 
-      <Container style={{ height: '100vh', border: '1px solid red', marginBottom: '-120px' }}>
+      <Container style={{ minHeight: '85vh', height: 'auto' }}>
         <form onClick={handleClick}>
           <input ref={radioRef} id="num" type="radio" name="type-sorteio" /> <label htmlFor="num">Numeros</label>
           <span style={{ marginLeft: '10px' }}> </span>
@@ -52,7 +52,7 @@ function App() {
           <NumbersDraw objResult={{ ...resultProp }} />
         )}
 
-        <div style={{ marginTop: '20px' }}>
+        <div>
           {result ? (
             <CardResultArea>
               {value.map((resp) => (

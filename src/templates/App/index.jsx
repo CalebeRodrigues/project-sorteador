@@ -39,7 +39,7 @@ function App() {
     <>
       <Navbar />
 
-      <Container style={{ minHeight: '85vh', height: 'auto' }}>
+      <Container style={{ minHeight: '80vh', height: 'auto' }}>
         <form onClick={handleClick}>
           <input ref={radioRef} id="num" type="radio" name="type-sorteio" /> <label htmlFor="num">Numeros</label>
           <span style={{ marginLeft: '10px' }}> </span>

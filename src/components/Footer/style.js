@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import instagram from '../../assets/img/instagram.png';
-
 export const FooterContainer = styled.div`
   background-color: #251f47;
   min-height: 120px;
@@ -29,7 +27,7 @@ export const FooterImage = styled.img`
   transition: 0.2s;
 
   :hover {
-    padding: 1px;
+    transform: scale(0.9);
     content: url(${(props) => props.img});
   }
 
